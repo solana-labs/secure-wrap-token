@@ -1,0 +1,18 @@
+[features]
+seeds = true
+skip-lint = false
+
+[programs.localnet]
+secure_wrap_token = "NNcz9dDJ5cSxeNy95kn4AosZaQ3jzBzMzrhxyRzDyXQ"
+token = "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "Localnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
+

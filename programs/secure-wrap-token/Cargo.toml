@@ -1,0 +1,29 @@
+[package]
+name = "secure-wrap-token"
+version = "0.1.0"
+description = "Solana Secure Wrap Token Program"
+authors = ["Solana Maintainers <maintainers@solana.foundation>"]
+categories = ["finance"]
+keywords = ["solana", "defi", "secure", "wrap", "token"]
+license = "Apache-2.0"
+homepage = "https://solana.com/"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "secure_wrap_token"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+test = []
+default = []
+
+[dependencies]
+solana-program = "1.16.8"
+anchor-lang = {version = "0.28.0", features = ["init-if-needed"]}
+anchor-spl = "0.28.0"
+num-traits = "0.2.16"
+solana-security-txt = "1.0.1"

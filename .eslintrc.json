@@ -1,0 +1,10 @@
+{
+  "parserOptions": { "project": "./tsconfig.json" },
+  "extends": "./node_modules/gts/",
+  "rules": {
+    "node/no-unpublished-import": ["error", {"allowModules": ["chai"]}],
+    "node/no-unpublished-require": ["error", {"allowModules": ["chai"]}],
+    // Note: you must disable the base rule as it can report incorrect errors
+    "@typescript-eslint/require-await": "error"
+  }
+}

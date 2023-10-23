@@ -31,11 +31,8 @@ pub struct Initialize<'info> {
 }
 
 pub fn initialize(ctx: Context<Initialize>) -> Result<()> {
-    ctx.accounts.global_state.initialize(
-        ctx.accounts.authority.key(),
-        *ctx.bumps
-            .get("global_state")
-            .ok_or(ProgramError::InvalidSeeds)?,
-    );
+    ctx.accounts
+        .global_state
+        .initialize(ctx.accounts.authority.key(), ctx.bumps.global_state);
     Ok(())
 }

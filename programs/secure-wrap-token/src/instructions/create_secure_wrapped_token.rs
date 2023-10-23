@@ -75,18 +75,10 @@ pub fn create_secure_wrapped_token(ctx: Context<CreateSecureWrappedToken>) -> Re
     secure_wrap_token_state.initialize(
         ctx.accounts.original_token_mint.key(),
         ctx.accounts.secure_wrap_token_mint.key(),
-        *ctx.bumps
-            .get("secure_wrap_token_mint")
-            .ok_or(ProgramError::InvalidSeeds)?,
-        *ctx.bumps
-            .get("program_original_token_account")
-            .ok_or(ProgramError::InvalidSeeds)?,
-        *ctx.bumps
-            .get("program_wrapped_token_account")
-            .ok_or(ProgramError::InvalidSeeds)?,
-        *ctx.bumps
-            .get("secure_wrap_token_state")
-            .ok_or(ProgramError::InvalidSeeds)?,
+        ctx.bumps.secure_wrap_token_mint,
+        ctx.bumps.program_original_token_account,
+        ctx.bumps.program_wrapped_token_account,
+        ctx.bumps.secure_wrap_token_state,
     );
     Ok(())
 }

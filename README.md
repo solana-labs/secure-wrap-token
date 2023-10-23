@@ -80,11 +80,11 @@ anchor build
 
 ### Test
 
-Integration tests (Typescript) can be run in the `secure-wrap-token/` directory using the provided test script command:
+Integration tests (Typescript) can be run using anchor:
 
 ```sh
 npm install
-./test_script.sh
+anchor test
 ```
 
 By default, integration tests are executed on a local validator, so it won't cost you any SOL.

@@ -95,7 +95,7 @@ pub fn place_order(ctx: Context<PlaceOrder>, params: &PlaceOrderParams) -> Resul
         ctx.accounts.secure_wrap_token_account.key(),
         params.amount_in,
         params.amount_out,
-        *ctx.bumps.get("order").ok_or(ProgramError::InvalidSeeds)?,
+        ctx.bumps.order,
     )?;
     ctx.accounts.global_state.validate_order_allowed(
         order.side,

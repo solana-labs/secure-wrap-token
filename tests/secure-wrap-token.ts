@@ -1,5 +1,3 @@
-// To run this test suite, please use the included './test_script.sh'.
-// Plain 'anchor test' does not work because it deploys the program without upgrade authority.
 import * as anchor from '@coral-xyz/anchor';
 import {expect} from 'chai';
 import {getMintAndOwner, mintOwnerFreeze} from './mint_utils';

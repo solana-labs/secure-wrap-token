@@ -63,9 +63,7 @@ pub fn freeze(ctx: Context<Freeze>, freeze_period_seconds: u64) -> Result<()> {
     let user_token_state = &mut ctx.accounts.user_token_state;
     user_token_state.validate_initialization(
         ctx.accounts.account_to_freeze.key(),
-        *ctx.bumps
-            .get("user_token_state")
-            .ok_or(ProgramError::InvalidSeeds)?,
+        ctx.bumps.user_token_state,
     )?;
     user_token_state.freeze(&ctx.accounts.account_to_freeze, freeze_period_seconds)?;
     ctx.accounts.secure_wrap_token_state.freeze_account(

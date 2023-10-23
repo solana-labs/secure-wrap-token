@@ -94,9 +94,7 @@ pub fn unwrap(ctx: Context<Unwrap>, amount: u64) -> Result<()> {
             .compute_unwrap_release_timestamp()
             .unwrap(),
         amount,
-        *ctx.bumps
-            .get("pending_unwrap")
-            .ok_or(ProgramError::InvalidSeeds)?,
+        ctx.bumps.pending_unwrap,
     );
     Ok(())
 }
